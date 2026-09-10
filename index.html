@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluxograma de Decisão - Sistema de Escolha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔄 Sistema de Escolha Interativo</h1>
+            <p>Siga o fluxograma e faça suas escolhas</p>
+        </header>
+
+        <main>
+            <div class="flowchart-container">
+                <!-- Etapa 1: Inicio -->
+                <div class="step active" id="step1">
+                    <div class="flowchart-box inicio">
+                        <h2>Bem-vindo!</h2>
+                        <p>Vamos começar uma jornada de decisões</p>
+                    </div>
+                    <div class="arrow">↓</div>
+                    <button class="btn btn-primary" onclick="goToStep(2)">Iniciar</button>
+                </div>
+
+                <!-- Etapa 2: Primeira Decisão -->
+                <div class="step" id="step2">
+                    <div class="flowchart-box decisao">
+                        <h2>❓ Primeira Pergunta</h2>
+                        <p>Qual é seu objetivo principal?</p>
+                    </div>
+                    <div class="options">
+                        <button class="btn btn-option" onclick="goToStep(3)">📚 Aprender</button>
+                        <button class="btn btn-option" onclick="goToStep(4)">💼 Trabalhar</button>
+                        <button class="btn btn-option" onclick="goToStep(5)">🎮 Diversão</button>
+                    </div>
+                    <button class="btn btn-secondary" onclick="goToStep(1)">← Voltar</button>
+                </div>
+
+                <!-- Etapa 3: Ramificação - Aprender -->
+                <div class="step" id="step3">
+                    <div class="flowchart-box decisao">
+                        <h2>❓ Segunda Pergunta</h2>
+                        <p>Qual área de aprendizado interessa?</p>
+                    </div>
+                    <div class="options">
+                        <button class="btn btn-option" onclick="goToStep(6)">👨‍💻 Programação</button>
+                        <button class="btn btn-option" onclick="goToStep(7)">🎨 Design</button>
+                        <button class="btn btn-option" onclick="goToStep(8)">📊 Dados</button>
+                    </div>
+                    <button class="btn btn-secondary" onclick="goToStep(2)">← Voltar</button>
+                </div>
+
+                <!-- Etapa 4: Ramificação - Trabalhar -->
+                <div class="step" id="step4">
+                    <div class="flowchart-box decisao">
+                        <h2>❓ Qual tipo de trabalho?</h2>
+                        <p>Escolha sua área de atuação</p>
+                    </div>
+                    <div class="options">
+                        <button class="btn btn-option" onclick="goToStep(9)">🏢 Empresa</button>
+                        <button class="btn btn-option" onclick="goToStep(10)">🚀 Startup</button>
+                        <button class="btn btn-option" onclick="goToStep(11)">💻 Freelancer</button>
+                    </div>
+                    <button class="btn btn-secondary" onclick="goToStep(2)">← Voltar</button>
+                </div>
+
+                <!-- Etapa 5: Ramificação - Diversão -->
+                <div class="step" id="step5">
+                    <div class="flowchart-box decisao">
+                        <h2>❓ Qual tipo de diversão?</h2>
+                        <p>Como você gosta de se divertir?</p>
+                    </div>
+                    <div class="options">
+                        <button class="btn btn-option" onclick="goToStep(12)">🎮 Jogos</button>
+                        <button class="btn btn-option" onclick="goToStep(13)">🎬 Filmes</button>
+                        <button class="btn btn-option" onclick="goToStep(14)">🎵 Música</button>
+                    </div>
+                    <button class="btn btn-secondary" onclick="goToStep(2)">← Voltar</button>
+                </div>
+
+                <!-- Resultados - Aprender -->
+                <div class="step" id="step6">
+                    <div class="flowchart-box resultado sucesso">
+                        <h2>✅ Resultado Final</h2>
+                        <p>Você escolheu: <strong>Aprender Programação</strong></p>
+                        <p class="descricao">Recomendamos começar com Python ou JavaScript. Dedicar 1-2 horas diárias de estudo!</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="goToStep(1)">🔄 Recomeçar</button>
+                </div>
+
+                <div class="step" id="step7">
+                    <div class="flowchart-box resultado sucesso">
+                        <h2>✅ Resultado Final</h2>
+                        <p>Você escolheu: <strong>Aprender Design</strong></p>
+                        <p class="descricao">Explore Figma, Adobe Creative Suite. Pratique daily sketches e procure inspiração em Dribbble!</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="goToStep(1)">🔄 Recomeçar</button>
+                </div>
+
+                <div class="step" id="step8">
+                    <div class="flowchart-box resultado sucesso">
+                        <h2>✅ Resultado Final</h2>
+                        <p>Você escolheu: <strong>Aprender Ciência de Dados</strong></p>
+                        <p class="descricao">Domine Python, SQL e bibliotecas como Pandas e NumPy. Trabalhe com datasets reais!</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="goToStep(1)">🔄 Recomeçar</button>
+                </div>
+
+                <!-- Resultados - Trabalhar -->
+                <div class="step" id="step9">
+                    <div class="flowchart-box resultado sucesso">
+                        <h2>✅ Resultado Final</h2>
+                        <p>Você escolheu: <strong>Trabalhar em Empresa</strong></p>
+                        <p class="descricao">Foque em habilidades corporativas, networking e desenvolvimento profissional contínuo!</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="goToStep(1)">🔄 Recomeçar</button>
+                </div>
+
+                <div class="step" id="step10">
+                    <div class="flowchart-box resultado sucesso">
+                        <h2>✅ Resultado Final</h2>
+                        <p>Você escolheu: <strong>Trabalhar em Startup</strong></p>
+                        <p class="descricao">Esteja preparado para multitarefa, crescimento rápido e impacto direto no produto!</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="goToStep(1)">🔄 Recomeçar</button>
+                </div>
+
+                <div class="step" id="step11">
+                    <div class="flowchart-box resultado sucesso">
+                        <h2>✅ Resultado Final</h2>
+                        <p>Você escolheu: <strong>Trabalhar como Freelancer</strong></p>
+                        <p class="descricao">Gerencie seu tempo, construa seu portfólio e cultive relacionamentos com clientes!</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="goToStep(1)">🔄 Recomeçar</button>
+                </div>
+
+                <!-- Resultados - Diversão -->
+                <div class="step" id="step12">
+                    <div class="flowchart-box resultado sucesso">
+                        <h2>✅ Resultado Final</h2>
+                        <p>Você escolheu: <strong>Jogos</strong></p>
+                        <p class="descricao">Explore diferentes gêneros, comunidades online e aproveite a experiência imersiva!</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="goToStep(1)">🔄 Recomeçar</button>
+                </div>
+
+                <div class="step" id="step13">
+                    <div class="flowchart-box resultado sucesso">
+                        <h2>✅ Resultado Final</h2>
+                        <p>Você escolheu: <strong>Filmes</strong></p>
+                        <p class="descricao">Descubra novos cineastas, estude cinematografia e aproveite sessões temáticas!</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="goToStep(1)">🔄 Recomeçar</button>
+                </div>
+
+                <div class="step" id="step14">
+                    <div class="flowchart-box resultado sucesso">
+                        <h2>✅ Resultado Final</h2>
+                        <p>Você escolheu: <strong>Música</strong></p>
+                        <p class="descricao">Explore novos artistas, aprenda sobre produção musical e usufrua de festivals!</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="goToStep(1)">🔄 Recomeçar</button>
+                </div>
+            </div>
+
+            <!-- Indicador de Progresso -->
+            <div class="progress-indicator">
+                <span id="progress-text">Passo 1 de 14</span>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 Sistema de Fluxograma Interativo | Desenvolvido com ❤️</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
